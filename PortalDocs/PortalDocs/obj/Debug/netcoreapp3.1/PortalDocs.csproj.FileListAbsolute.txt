@@ -17,3 +17,11 @@ C:\Projeto Docs\PortalDocs\PortalDocs\obj\Debug\netcoreapp3.1\PortalDocs.RazorTa
 C:\Projeto Docs\PortalDocs\PortalDocs\obj\Debug\netcoreapp3.1\PortalDocs.dll
 C:\Projeto Docs\PortalDocs\PortalDocs\obj\Debug\netcoreapp3.1\PortalDocs.pdb
 C:\Projeto Docs\PortalDocs\PortalDocs\obj\Debug\netcoreapp3.1\PortalDocs.genruntimeconfig.cache
+C:\Projeto Docs\PortalDocs\PortalDocs\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Projeto Docs\PortalDocs\PortalDocs\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Projeto Docs\PortalDocs\PortalDocs\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Projeto Docs\PortalDocs\PortalDocs\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Projeto Docs\PortalDocs\PortalDocs\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Projeto Docs\PortalDocs\PortalDocs\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Projeto Docs\PortalDocs\PortalDocs\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Projeto Docs\PortalDocs\PortalDocs\obj\Debug\netcoreapp3.1\PortalDocs.csproj.CopyComplete
