@@ -1,35 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projeto Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj": {}
+    "C:\\CSharp\\Portal.Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj": {}
   },
   "projects": {
-    "C:\\Projeto Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj": {
+    "C:\\CSharp\\Portal.Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projeto Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj",
+        "projectUniqueName": "C:\\CSharp\\Portal.Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj",
         "projectName": "PortalDocs",
-        "projectPath": "C:\\Projeto Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj",
-        "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Projeto Docs\\PortalDocs\\PortalDocs\\obj\\",
+        "projectPath": "C:\\CSharp\\Portal.Docs\\PortalDocs\\PortalDocs\\PortalDocs.csproj",
+        "packagesPath": "C:\\Users\\rubens.pires\\.nuget\\packages\\",
+        "outputPath": "C:\\CSharp\\Portal.Docs\\PortalDocs\\PortalDocs\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rubens.pires\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -40,8 +37,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.AspNet.Mvc": {
               "target": "Package",
@@ -58,6 +55,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.13, 5.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -66,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
