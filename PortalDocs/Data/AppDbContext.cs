@@ -6,6 +6,7 @@ namespace PortalDocs.Data
     public class AppDbContext : DbContext
     {
         public DbSet<Solicitacao> Solicitacoes { get; set; }
+        public DbSet<Parceiro> Parceiros { get; set; }
 
 
 

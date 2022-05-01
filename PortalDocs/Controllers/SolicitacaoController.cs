@@ -63,27 +63,59 @@ namespace MeuTodo.Controllers
         }
         
 
-        [HttpPut("solicitacoes/{id}")]
+        [HttpPost("parceiro")]
+        public async Task<IActionResult> PostAsync(
+            [FromServices] AppDbContext context,
+            [FromBody] Parceiro model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var parceiro = new Parceiro
+            {
+                Id = model.Id,
+                DocumentosEmpresa = model.DocumentosEmpresa,
+                NomeFuncionario = model.NomeFuncionario,
+                CpfFuncionario = model.CpfFuncionario,
+                RgFuncionario = model.RgFuncionario,
+                DocumentosFuncionario = model.DocumentosFuncionario,
+            };
+            try
+            {
+                await context.Parceiros.AddAsync(parceiro);
+                await context.SaveChangesAsync();
+                return Created($"v1/parceiro/{parceiro.Id}", parceiro);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+        [HttpPut("parceiro/{id}")]
         public async Task<IActionResult> PutAsync(
             [FromServices] AppDbContext context,
-            [FromBody] Solicitacao model,
+            [FromBody] Parceiro model,
             [FromRoute] int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var solicitacao = await context.Solicitacoes.FirstOrDefaultAsync(x => x.Id == id);
+            var parceiro = await context.Parceiros.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (solicitacao == null)
+            if (parceiro == null)
                 return NotFound();
 
             try
             {
-                solicitacao.ObservacaoSolicitacao = model.ObservacaoSolicitacao;
+                parceiro.DocumentosEmpresa = model.DocumentosEmpresa;
+                parceiro.NomeFuncionario = model.NomeFuncionario;
+                parceiro.CpfFuncionario = model.CpfFuncionario;
+                parceiro.RgFuncionario = model.RgFuncionario;
+                parceiro.DocumentosFuncionario = model.DocumentosFuncionario;
 
-                context.Solicitacoes.Update(solicitacao);
+                context.Parceiros.Update(parceiro);
                 await context.SaveChangesAsync();
-                return Ok(solicitacao);
+                return Ok(parceiro);
             }
             catch (Exception e)
             {
