@@ -7,7 +7,7 @@ using PortalDocs.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace MeuTodo.Controllers
+namespace PortalDocs.Controllers
 {
     [ApiController]
     [Route("v1")]
@@ -63,65 +63,8 @@ namespace MeuTodo.Controllers
         }
         
 
-        [HttpPost("parceiro")]
-        public async Task<IActionResult> PostAsync(
-            [FromServices] AppDbContext context,
-            [FromBody] Parceiro model)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
-            var parceiro = new Parceiro
-            {
-                Id = model.Id,
-                DocumentosEmpresa = model.DocumentosEmpresa,
-                NomeFuncionario = model.NomeFuncionario,
-                CpfFuncionario = model.CpfFuncionario,
-                RgFuncionario = model.RgFuncionario,
-                DocumentosFuncionario = model.DocumentosFuncionario,
-            };
-            try
-            {
-                await context.Parceiros.AddAsync(parceiro);
-                await context.SaveChangesAsync();
-                return Created($"v1/parceiro/{parceiro.Id}", parceiro);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
-        }
-        [HttpPut("parceiro/{id}")]
-        public async Task<IActionResult> PutAsync(
-            [FromServices] AppDbContext context,
-            [FromBody] Parceiro model,
-            [FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest();
-
-            var parceiro = await context.Parceiros.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (parceiro == null)
-                return NotFound();
-
-            try
-            {
-                parceiro.DocumentosEmpresa = model.DocumentosEmpresa;
-                parceiro.NomeFuncionario = model.NomeFuncionario;
-                parceiro.CpfFuncionario = model.CpfFuncionario;
-                parceiro.RgFuncionario = model.RgFuncionario;
-                parceiro.DocumentosFuncionario = model.DocumentosFuncionario;
-
-                context.Parceiros.Update(parceiro);
-                await context.SaveChangesAsync();
-                return Ok(parceiro);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
-        }
+        
+        
 
         [HttpDelete("solicitacoes/{id}")]
         public async Task<IActionResult> DeleteAsync(
