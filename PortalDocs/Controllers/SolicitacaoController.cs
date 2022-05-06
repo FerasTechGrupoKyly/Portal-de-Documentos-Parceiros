@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PortalDocs.Data;
 using PortalDocs.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace PortalDocs.Controllers
 {
@@ -47,7 +45,7 @@ namespace PortalDocs.Controllers
                 ParceiroEmail = model.ParceiroEmail,
                 DocumentoRequerido = model.DocumentoRequerido,
                 TipoDocumento = model.TipoDocumento,
-               
+
             };
 
             try
@@ -61,10 +59,10 @@ namespace PortalDocs.Controllers
                 return BadRequest(e);
             }
         }
-        
 
-        
-        
+
+
+
 
         [HttpDelete("solicitacoes/{id}")]
         public async Task<IActionResult> DeleteAsync(

@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PortalDocs",
+    "\\PortalDocs\\Controllers",
+    "\\PortalDocs\\Models"
   ],
-  "SelectedNode": "\\PortalDocs.sln",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

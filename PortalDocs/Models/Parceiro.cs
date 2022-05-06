@@ -15,6 +15,6 @@ namespace PortalDocs.Models
         public string RgFuncionario { get; set; }
         [Required]
         public string DocumentosFuncionario { get; set; }
-        
+
     }
 }

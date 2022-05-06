@@ -2,7 +2,7 @@
 
 namespace PortalDocs.Models
 {
-    public class Solicitacao 
+    public class Solicitacao
     {
         public int Id { get; set; }
         [Required]
