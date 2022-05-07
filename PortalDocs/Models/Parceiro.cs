@@ -18,6 +18,6 @@ namespace PortalDocs.Models
         public string DocumentosEmpresa  { get; set; }
         [Required]
         public string DocumentosFuncionario { get; set; }
-
+        
     }
 }
