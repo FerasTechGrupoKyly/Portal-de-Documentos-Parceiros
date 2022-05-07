@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PortalDocs.Models
 {
@@ -6,13 +7,15 @@ namespace PortalDocs.Models
     {
         public int Id { get; set; }
         [Required]
-        public string DocumentosEmpresa { get; set; }
+        public string CNPJ { get; set; }
         [Required]
-        public string NomeFuncionario { get; set; }
+        public string Nome { get; set; }
         [Required]
-        public string CpfFuncionario { get; set; }
+        public string Email { get; set; }
         [Required]
-        public string RgFuncionario { get; set; }
+        public List<Funcionarios> Funcionarios { get; set; }
+        [Required]
+        public string DocumentosEmpresa  { get; set; }
         [Required]
         public string DocumentosFuncionario { get; set; }
         

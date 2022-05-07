@@ -32,23 +32,10 @@ namespace PortalDocs.Controllers
         [HttpPost("solicitacoes")]
         public async Task<IActionResult> PostAsync(
             [FromServices] AppDbContext context,
-            [FromBody] Solicitacao model)
+            [FromBody] Solicitacao solicitacao)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
-
-            var solicitacao = new Solicitacao
-            {
-                ObservacaoSolicitacao = model.ObservacaoSolicitacao,
-                Solicitante = model.Solicitante,
-                Data = model.Data,
-                ParceiroNome = model.ParceiroNome,
-                ParceiroCnpj = model.ParceiroCnpj,
-                ParceiroEmail = model.ParceiroEmail,
-                DocumentoRequerido = model.DocumentoRequerido,
-                TipoDocumento = model.TipoDocumento,
-               
-            };
 
             try
             {
