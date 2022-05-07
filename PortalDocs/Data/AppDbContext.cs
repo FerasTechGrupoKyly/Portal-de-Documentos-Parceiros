@@ -10,8 +10,8 @@ namespace PortalDocs.Data
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        
-          =>  optionsBuilder.UseSqlite(connectionString: "DataSource=Solicitacao.db;Cache=Shared");
-        
+
+          => optionsBuilder.UseSqlite(connectionString: "DataSource=Solicitacao.db;Cache=Shared");
+
     }
 }
