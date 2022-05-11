@@ -11,11 +11,17 @@ namespace PortalDocs.Controllers
 {
     [ApiController]
     [Route("v1")]
-    public class TodoController : ControllerBase
+    public class SolicitacaoController : ControllerBase
     {
+        /// <summary>
+        /// Criar um Cadastro de Solicitante
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="id">Solicitação de informação do Cadastro </param>
+        /// <returns>Registro da informação do cadastro</returns>
         [HttpGet]
         [Route("solicitacoes/{id}")]
-        public async Task<IActionResult> GetByIdAsync(
+        public async Task<ActionResult<Solicitacao>> GetByIdAsync(
             [FromServices] AppDbContext context,
             [FromRoute] int id)
         {
@@ -29,6 +35,13 @@ namespace PortalDocs.Controllers
                 : Ok(solicitacoes);
         }
 
+
+        /// <summary>
+        /// Criar uma solicitação de documentos para o Parceiro de Negócio.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="solicitacao">Informações de documentos Solicitados</param>
+        /// <returns>Registro das informações solicitadas</returns>
         [HttpPost("solicitacoes")]
         public async Task<IActionResult> PostAsync(
             [FromServices] AppDbContext context,
@@ -52,7 +65,12 @@ namespace PortalDocs.Controllers
 
         
         
-
+        /// <summary>
+        /// Excluir dados 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("solicitacoes/{id}")]
         public async Task<IActionResult> DeleteAsync(
             [FromServices] AppDbContext context,

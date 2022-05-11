@@ -4,8 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PortalDocs.Data;
-
-
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace PortalDocs
 {
@@ -23,7 +24,11 @@ namespace PortalDocs
         {
             services.AddControllers();
             services.AddDbContext<AppDbContext>();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(options =>
+            {
+                var xmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
