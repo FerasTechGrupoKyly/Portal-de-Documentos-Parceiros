@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace PortalDocs.Models
 {
     /// <summary>
-    /// Dados dos Documentos Solicitados
+    /// Classe que instancia Solicitacão do Parceiro 
     /// </summary>
     public class Solicitacao 
     {
@@ -23,6 +23,9 @@ namespace PortalDocs.Models
         [Required]
         public string Solicitante { get; set; }
 
+        /// <summary>
+        /// Data da Solicitação
+        /// </summary>
         [Required]
         public string Data { get; set; }
         /// <summary>

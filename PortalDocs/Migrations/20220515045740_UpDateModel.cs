@@ -2,7 +2,7 @@
 
 namespace PortalDocs.Migrations
 {
-    public partial class InitialCreation : Migration
+    public partial class UpDateModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,11 +48,10 @@ namespace PortalDocs.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CNPJ = table.Column<string>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
-                    DocumentosEmpresa = table.Column<string>(type: "TEXT", nullable: true),
-                    DocumentosFuncionario = table.Column<string>(type: "TEXT", nullable: true),
+                    CNPJ = table.Column<string>(type: "TEXT", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", nullable: false),
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
+                    DocumentosEmpresa = table.Column<string>(type: "TEXT", nullable: false),
                     SolicitacaoId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -72,9 +71,10 @@ namespace PortalDocs.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CPF = table.Column<string>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Rg = table.Column<string>(type: "TEXT", nullable: true),
+                    CPF = table.Column<string>(type: "TEXT", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", nullable: false),
+                    Rg = table.Column<string>(type: "TEXT", nullable: false),
+                    DocumentosFuncionario = table.Column<string>(type: "TEXT", nullable: false),
                     ParceiroId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>

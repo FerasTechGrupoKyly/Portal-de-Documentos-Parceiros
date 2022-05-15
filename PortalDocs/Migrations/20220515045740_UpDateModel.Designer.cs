@@ -9,39 +9,14 @@ using PortalDocs.Data;
 namespace PortalDocs.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220506141444_InitialCreation")]
-    partial class InitialCreation
+    [Migration("20220515045740_UpDateModel")]
+    partial class UpDateModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.16");
-
-            modelBuilder.Entity("PortalDocs.Funcionarios", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CPF")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("ParceiroId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Rg")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ParceiroId");
-
-                    b.ToTable("Funcionarios");
-                });
 
             modelBuilder.Entity("PortalDocs.Models.Documentos", b =>
                 {
@@ -63,6 +38,70 @@ namespace PortalDocs.Migrations
                     b.HasIndex("SolicitacaoId");
 
                     b.ToTable("Documentos");
+                });
+
+            modelBuilder.Entity("PortalDocs.Models.Funcionarios", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DocumentosFuncionario")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("ParceiroId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Rg")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParceiroId");
+
+                    b.ToTable("Funcionarios");
+                });
+
+            modelBuilder.Entity("PortalDocs.Models.Parceiro", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CNPJ")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DocumentosEmpresa")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("SolicitacaoId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SolicitacaoId");
+
+                    b.ToTable("Parceiro");
                 });
 
             modelBuilder.Entity("PortalDocs.Models.Solicitacao", b =>
@@ -88,44 +127,6 @@ namespace PortalDocs.Migrations
                     b.ToTable("Solicitacoes");
                 });
 
-            modelBuilder.Entity("PortalDocs.Parceiro", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CNPJ")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DocumentosEmpresa")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DocumentosFuncionario")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("SolicitacaoId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SolicitacaoId");
-
-                    b.ToTable("Parceiro");
-                });
-
-            modelBuilder.Entity("PortalDocs.Funcionarios", b =>
-                {
-                    b.HasOne("PortalDocs.Parceiro", null)
-                        .WithMany("Funcionarios")
-                        .HasForeignKey("ParceiroId");
-                });
-
             modelBuilder.Entity("PortalDocs.Models.Documentos", b =>
                 {
                     b.HasOne("PortalDocs.Models.Solicitacao", null)
@@ -133,11 +134,23 @@ namespace PortalDocs.Migrations
                         .HasForeignKey("SolicitacaoId");
                 });
 
-            modelBuilder.Entity("PortalDocs.Parceiro", b =>
+            modelBuilder.Entity("PortalDocs.Models.Funcionarios", b =>
+                {
+                    b.HasOne("PortalDocs.Models.Parceiro", null)
+                        .WithMany("Funcionarios")
+                        .HasForeignKey("ParceiroId");
+                });
+
+            modelBuilder.Entity("PortalDocs.Models.Parceiro", b =>
                 {
                     b.HasOne("PortalDocs.Models.Solicitacao", null)
                         .WithMany("Parceiro")
                         .HasForeignKey("SolicitacaoId");
+                });
+
+            modelBuilder.Entity("PortalDocs.Models.Parceiro", b =>
+                {
+                    b.Navigation("Funcionarios");
                 });
 
             modelBuilder.Entity("PortalDocs.Models.Solicitacao", b =>
@@ -145,11 +158,6 @@ namespace PortalDocs.Migrations
                     b.Navigation("Documentos");
 
                     b.Navigation("Parceiro");
-                });
-
-            modelBuilder.Entity("PortalDocs.Parceiro", b =>
-                {
-                    b.Navigation("Funcionarios");
                 });
 #pragma warning restore 612, 618
         }
