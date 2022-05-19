@@ -14,7 +14,7 @@
         /// </summary>
         public string DocumentoRequerido { get; set; }
         /// <summary>
-        /// Tipo do Documento Requirido
+        /// Tipo do Documento Requerido
         /// </summary>
         public string TipoDocumento { get; set; }
 

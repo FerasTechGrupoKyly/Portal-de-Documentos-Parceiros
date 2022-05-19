@@ -4,6 +4,10 @@ namespace PortalDocs.Migrations
 {
     public partial class UpDateModel : Migration
     {
+        /// <summary>
+        /// Migration EF
+        /// </summary>
+        /// <param name="migrationBuilder"></param>
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -104,6 +108,10 @@ namespace PortalDocs.Migrations
                 column: "SolicitacaoId");
         }
 
+        /// <summary>
+        /// Migration 
+        /// </summary>
+        /// <param name="migrationBuilder"></param>
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

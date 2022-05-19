@@ -29,7 +29,7 @@ namespace PortalDocs.Models
         [Required]
         public string Rg { get; set; }
         /// <summary>
-        /// Documentos requerido do Funcinarios
+        /// Documentos requerido do Funcionário
         /// </summary>
         [Required]
         public string DocumentosFuncionario { get; set; }

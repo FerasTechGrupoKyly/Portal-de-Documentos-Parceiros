@@ -8,10 +8,17 @@ using PortalDocs.Data;
 
 namespace PortalDocs.Migrations
 {
+    /// <summary>
+    /// Update Model
+    /// </summary>
     [DbContext(typeof(AppDbContext))]
     [Migration("20220515045740_UpDateModel")]
     partial class UpDateModel
     {
+        /// <summary>
+        /// implementando Migration
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
