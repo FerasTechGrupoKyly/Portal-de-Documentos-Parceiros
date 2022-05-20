@@ -2,7 +2,7 @@
 
 namespace PortalDocs.Migrations
 {
-    public partial class UpDateModel : Migration
+    public partial class InitialCreation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,7 +22,7 @@ namespace PortalDocs.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Documentos",
+                name: "DocumentoSolicitacoes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -33,9 +33,9 @@ namespace PortalDocs.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Documentos", x => x.Id);
+                    table.PrimaryKey("PK_DocumentoSolicitacoes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Documentos_Solicitacoes_SolicitacaoId",
+                        name: "FK_DocumentoSolicitacoes_Solicitacoes_SolicitacaoId",
                         column: x => x.SolicitacaoId,
                         principalTable: "Solicitacoes",
                         principalColumn: "Id",
@@ -43,24 +43,44 @@ namespace PortalDocs.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Parceiro",
+                name: "Parceiros",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CNPJ = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: false),
-                    Email = table.Column<string>(type: "TEXT", nullable: false),
-                    DocumentosEmpresa = table.Column<string>(type: "TEXT", nullable: false),
+                    CNPJ = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Email = table.Column<string>(type: "TEXT", nullable: true),
                     SolicitacaoId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Parceiro", x => x.Id);
+                    table.PrimaryKey("PK_Parceiros", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Parceiro_Solicitacoes_SolicitacaoId",
+                        name: "FK_Parceiros_Solicitacoes_SolicitacaoId",
                         column: x => x.SolicitacaoId,
                         principalTable: "Solicitacoes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DocumentosParceiros",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    DocumentosEmpresa = table.Column<string>(type: "TEXT", nullable: true),
+                    DocumentosFuncionarios = table.Column<string>(type: "TEXT", nullable: true),
+                    ParceiroId = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocumentosParceiros", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DocumentosParceiros_Parceiros_ParceiroId",
+                        column: x => x.ParceiroId,
+                        principalTable: "Parceiros",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -74,24 +94,28 @@ namespace PortalDocs.Migrations
                     CPF = table.Column<string>(type: "TEXT", nullable: false),
                     Nome = table.Column<string>(type: "TEXT", nullable: false),
                     Rg = table.Column<string>(type: "TEXT", nullable: false),
-                    DocumentosFuncionario = table.Column<string>(type: "TEXT", nullable: false),
                     ParceiroId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Funcionarios", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Funcionarios_Parceiro_ParceiroId",
+                        name: "FK_Funcionarios_Parceiros_ParceiroId",
                         column: x => x.ParceiroId,
-                        principalTable: "Parceiro",
+                        principalTable: "Parceiros",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Documentos_SolicitacaoId",
-                table: "Documentos",
+                name: "IX_DocumentoSolicitacoes_SolicitacaoId",
+                table: "DocumentoSolicitacoes",
                 column: "SolicitacaoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DocumentosParceiros_ParceiroId",
+                table: "DocumentosParceiros",
+                column: "ParceiroId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Funcionarios_ParceiroId",
@@ -99,21 +123,24 @@ namespace PortalDocs.Migrations
                 column: "ParceiroId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Parceiro_SolicitacaoId",
-                table: "Parceiro",
+                name: "IX_Parceiros_SolicitacaoId",
+                table: "Parceiros",
                 column: "SolicitacaoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Documentos");
+                name: "DocumentoSolicitacoes");
+
+            migrationBuilder.DropTable(
+                name: "DocumentosParceiros");
 
             migrationBuilder.DropTable(
                 name: "Funcionarios");
 
             migrationBuilder.DropTable(
-                name: "Parceiro");
+                name: "Parceiros");
 
             migrationBuilder.DropTable(
                 name: "Solicitacoes");

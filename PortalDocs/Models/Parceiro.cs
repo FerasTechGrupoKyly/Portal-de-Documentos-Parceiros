@@ -15,28 +15,23 @@ namespace PortalDocs.Models
         /// <summary>
         /// Documento CNPJ do Parceiro
         /// </summary>
-        [Required]
         public string CNPJ { get; set; }
         /// <summary>
         /// String nome do Parceiro
         /// </summary>
-        [Required]
         public string Nome { get; set; }
         /// <summary>
         /// string endereço Email do Parceiro
         /// </summary>
-        [Required]
         public string Email { get; set; }
         /// <summary>
         /// Lista de Funcionarios do Parceiro
         /// </summary>
-        [Required]
         public List<Funcionarios> Funcionarios { get; set; }
         /// <summary>
         /// Documentos requeridos do parceiro
         /// </summary>
-        [Required]
-        public string DocumentosEmpresa  { get; set; }
+        public List<DocumentosParceiro> Documentos { get; set; }
         
      }
 }

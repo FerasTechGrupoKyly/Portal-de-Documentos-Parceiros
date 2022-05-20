@@ -29,7 +29,7 @@ namespace PortalDocs.Models
         [Required]
         public string Data { get; set; }
         /// <summary>
-        /// Nome do Parceiro
+        /// Lista de parceiro
         /// </summary>
         [Required]
         public List<Parceiro> Parceiro { get; set;} 
@@ -37,7 +37,7 @@ namespace PortalDocs.Models
         /// Informar os documentos do parceiro.
         /// </summary>
         [Required]
-        public List<Documentos> Documentos { get; set; }
+        public List<DocumentoSolicitacao> Documentos { get; set; }
 
     }
     

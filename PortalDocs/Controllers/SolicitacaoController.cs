@@ -61,8 +61,44 @@ namespace PortalDocs.Controllers
                 return BadRequest(e);
             }
         }
-        
+        /// <summary>
+        /// Requisição do tipo PUT para atualizar dados do Parceiro
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="model"></param>
+        /// <param name="funcionario"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut("solicitacoes/{id}")]
+        public async Task<IActionResult> PutAsync(
+            [FromServices] AppDbContext context,
+            [FromBody] Parceiro model,
+            [FromRoute]int id)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
 
+            var parceiro = await context.Parceiros.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (parceiro == null)
+                return NotFound();
+
+             try
+            {
+                parceiro.Funcionarios = model.Funcionarios;
+                parceiro.Documentos = model.Documentos;
+
+
+
+                context.Parceiros.Update(parceiro);
+                await context.SaveChangesAsync();
+                return Ok(parceiro);
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
         
         
         /// <summary>

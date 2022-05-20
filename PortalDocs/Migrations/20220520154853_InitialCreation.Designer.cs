@@ -9,8 +9,8 @@ using PortalDocs.Data;
 namespace PortalDocs.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220515045740_UpDateModel")]
-    partial class UpDateModel
+    [Migration("20220520154853_InitialCreation")]
+    partial class InitialCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace PortalDocs.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.16");
 
-            modelBuilder.Entity("PortalDocs.Models.Documentos", b =>
+            modelBuilder.Entity("PortalDocs.Models.DocumentoSolicitacao", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -37,7 +37,29 @@ namespace PortalDocs.Migrations
 
                     b.HasIndex("SolicitacaoId");
 
-                    b.ToTable("Documentos");
+                    b.ToTable("DocumentoSolicitacoes");
+                });
+
+            modelBuilder.Entity("PortalDocs.Models.DocumentosParceiro", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("DocumentosEmpresa")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DocumentosFuncionarios")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("ParceiroId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParceiroId");
+
+                    b.ToTable("DocumentosParceiros");
                 });
 
             modelBuilder.Entity("PortalDocs.Models.Funcionarios", b =>
@@ -47,10 +69,6 @@ namespace PortalDocs.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DocumentosFuncionario")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -79,19 +97,12 @@ namespace PortalDocs.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("CNPJ")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DocumentosEmpresa")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("SolicitacaoId")
@@ -101,7 +112,7 @@ namespace PortalDocs.Migrations
 
                     b.HasIndex("SolicitacaoId");
 
-                    b.ToTable("Parceiro");
+                    b.ToTable("Parceiros");
                 });
 
             modelBuilder.Entity("PortalDocs.Models.Solicitacao", b =>
@@ -127,11 +138,18 @@ namespace PortalDocs.Migrations
                     b.ToTable("Solicitacoes");
                 });
 
-            modelBuilder.Entity("PortalDocs.Models.Documentos", b =>
+            modelBuilder.Entity("PortalDocs.Models.DocumentoSolicitacao", b =>
                 {
                     b.HasOne("PortalDocs.Models.Solicitacao", null)
                         .WithMany("Documentos")
                         .HasForeignKey("SolicitacaoId");
+                });
+
+            modelBuilder.Entity("PortalDocs.Models.DocumentosParceiro", b =>
+                {
+                    b.HasOne("PortalDocs.Models.Parceiro", null)
+                        .WithMany("Documentos")
+                        .HasForeignKey("ParceiroId");
                 });
 
             modelBuilder.Entity("PortalDocs.Models.Funcionarios", b =>
@@ -150,6 +168,8 @@ namespace PortalDocs.Migrations
 
             modelBuilder.Entity("PortalDocs.Models.Parceiro", b =>
                 {
+                    b.Navigation("Documentos");
+
                     b.Navigation("Funcionarios");
                 });
 

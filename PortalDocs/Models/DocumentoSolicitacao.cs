@@ -3,7 +3,7 @@
     /// <summary>
     /// Classe para instaciar lista de Documentos
     /// </summary>
-    public class Documentos
+    public class DocumentoSolicitacao
     {
         /// <summary>
         /// Identificador Documentos
