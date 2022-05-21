@@ -25,7 +25,7 @@ namespace PortalDocs.Models
         /// </summary>
         public string Email { get; set; }
         /// <summary>
-        /// Lista de Funcionarios do Parceiro
+        /// Lista de Funcionários do Parceiro
         /// </summary>
         public List<Funcionarios> Funcionarios { get; set; }
         /// <summary>

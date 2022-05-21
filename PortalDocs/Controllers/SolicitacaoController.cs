@@ -9,6 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PortalDocs.Controllers
 {
+    /// <summary>
+    /// Informações do Cadastro
+    /// </summary>
     [ApiController]
     [Route("v1")]
     public class SolicitacaoController : ControllerBase
