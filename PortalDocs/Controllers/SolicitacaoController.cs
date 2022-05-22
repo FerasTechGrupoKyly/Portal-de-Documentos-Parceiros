@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace PortalDocs.Controllers
 {
     /// <summary>
-    /// Informações do Cadastro
+    /// Classe que Configura API e suas requisições
     /// </summary>
     [ApiController]
     [Route("v1")]
@@ -64,14 +64,13 @@ namespace PortalDocs.Controllers
                 return BadRequest(e);
             }
         }
-        /// <summary>
-        /// Requisição do tipo PUT para atualizar dados do Parceiro
-        /// </summary>
-        /// <param name="context"></param>
-        /// <param name="model"></param>
-        /// <param name="funcionario"></param>
-        /// <param name="id"></param>
-        /// <returns></returns>
+       /// <summary>
+       /// Requisição PUT responsável por Atualizar dados do Parceiro
+       /// </summary>
+       /// <param name="context"></param>
+       /// <param name="model"></param>
+       /// <param name="id"></param>
+       /// <returns></returns>
         [HttpPut("solicitacoes/{id}")]
         public async Task<IActionResult> PutAsync(
             [FromServices] AppDbContext context,
@@ -99,7 +98,7 @@ namespace PortalDocs.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
         

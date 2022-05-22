@@ -22,7 +22,6 @@ namespace PortalDocs.Models
         /// </summary>
         [Required]
         public string Solicitante { get; set; }
-
         /// <summary>
         /// Data da Solicitação
         /// </summary>
@@ -34,7 +33,7 @@ namespace PortalDocs.Models
         [Required]
         public List<Parceiro> Parceiro { get; set;} 
         /// <summary>
-        /// Informar os documentos do parceiro.
+        /// Lista de documentos da Solicitação
         /// </summary>
         [Required]
         public List<DocumentoSolicitacao> Documentos { get; set; }
