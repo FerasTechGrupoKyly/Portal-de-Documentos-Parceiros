@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=EB+Garamond:wght@600&display=swap');
+
+body {
+  background-color: #f6f6f6;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+}

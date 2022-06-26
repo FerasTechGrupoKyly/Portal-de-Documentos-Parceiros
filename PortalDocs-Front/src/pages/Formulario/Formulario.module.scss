@@ -1,0 +1,27 @@
+.menu{
+    padding: 40px 80px;
+    background-color: #e0e0e0;
+    align-items: baseline;
+   
+    
+}
+.buttons{
+    float: right;
+    width: 400px;
+   
+}
+.header{
+    align-items: center;
+    display: flex;
+    height: 200px;
+    padding: 0 250px;
+    &_text {
+        color: #404040;
+        font-size: 3rem;
+        min-width: 900px;
+        width: 40%;
+        text-align: center;
+        
+    }
+    
+}
