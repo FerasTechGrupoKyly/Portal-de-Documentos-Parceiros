@@ -1,3 +1,18 @@
-.p1{
+.p1,.p2,.p3{
     font-size:2rem;
+    padding: 0 0 0 150px;
+}
+.form{
+    padding: 0 0 0 60px;
+    font-size: 20px;
+}
+label{
+    float: left;
+    width: 300px;
+    padding-right: 24px;
+}
+input{
+    margin: 10px;
+    width: 400px;
+    padding:0 24px 0 0;
 }

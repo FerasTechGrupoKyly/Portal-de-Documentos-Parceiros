@@ -1,0 +1,16 @@
+fieldset{
+    width: 65%;
+    background-color: rgb(236, 236, 236);
+    div{
+    display:grid;}
+    input{
+    margin: 10px;
+    width: 250px;
+    padding:0 24px 0 0;
+    }
+    label{
+        float: left;
+        width: 170px;
+        padding-right: 24px;
+    }
+}

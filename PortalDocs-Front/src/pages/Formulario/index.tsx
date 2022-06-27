@@ -2,6 +2,7 @@ import styles from './Formulario.module.scss'
 import {ReactComponent as Logo} from 'assets/logo.svg'
 import Button from 'componentes/Button'
 import Forms from 'componentes/Forms'
+import Footer from 'componentes/Footer'
 
 export default function Formulario(){
   return(
@@ -19,7 +20,9 @@ export default function Formulario(){
       </header>
       <form>
         <Forms />
+        <Button>Add Funcionario</Button>
       </form>
+      <Footer/>
     </main>
   
   )
