@@ -20,9 +20,7 @@
         font-size: 3rem;
         min-width: 900px;
         width: 40%;
-        text-align: center;
-        
-    }
+        text-align: center;}
     
 }
 footer{
@@ -31,4 +29,17 @@ footer{
     align-items: baseline;
     margin-top: 100px;
     
+}
+.button{
+    align-items: center;
+    background-color: #c0bebe;
+    border: none;
+    color: #404040;
+    padding: 10px 37px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    box-shadow: 2px 2px rgb(117, 116, 116);
+    margin: 10px 20px 0 20px;
 }

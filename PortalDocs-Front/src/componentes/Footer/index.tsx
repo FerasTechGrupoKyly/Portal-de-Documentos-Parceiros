@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss'
-import {ReactComponent as Kyly} from 'assets/kyly.svg'
+import {ReactComponent as Kyly} from 'assets/Kyly.svg'
 
 
 export default function Footer(){

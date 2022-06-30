@@ -9,7 +9,7 @@ class Button extends React.Component <{
         const { type = "button"} = this.props;
 
         return(
-            <button className={styles.button}>
+            <button className={styles.button} >
                 {this.props.children}
             </button>
         )

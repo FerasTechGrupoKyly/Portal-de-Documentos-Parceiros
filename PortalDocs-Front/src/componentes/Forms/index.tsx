@@ -1,7 +1,6 @@
 import Button from 'componentes/Button';
 import React from 'react';
 import styles from './Forms.module.scss'
-import FormsFuncionario from 'componentes/FormsFuncionarios'
 
 class Forms extends React.Component{
     render(){
@@ -46,8 +45,7 @@ class Forms extends React.Component{
                     <input type='grid' name='DocumentosEmpresa' id='DocumentosEmpresa'/>
                 </div>
                 <p className={styles.p3}>Dados dos funcionarios</p>
-                    <FormsFuncionario/>
-                <Button>Enviar</Button>
+               
             </form>
         )
     }

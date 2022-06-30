@@ -1,0 +1,27 @@
+.main{
+    display: block;
+    padding: 10px 0 10px 0;
+}
+.header{
+    align-items: center;
+    display: inline-flex;
+    height: 20px;
+    padding: 20px  150px 60px ;
+    text-align: center;
+    &_text {
+        text-align: center;
+        color: #404040;
+        font-size: 2rem;
+        min-width: 500px;
+        width: 40%;
+        text-align: center;}
+}
+.form{
+    padding: 10px 0 10px 0;
+    margin:25px;
+    font-size: 20px;
+    .button{
+        padding:25px 0 0 40%;
+    }
+}
+
