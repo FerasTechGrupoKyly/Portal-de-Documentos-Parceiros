@@ -28,7 +28,7 @@ namespace PortalDocs.Models
         [Required]
         public string Data { get; set; }
         /// <summary>
-        /// Lista de parceiro
+        /// Lista de parceiros
         /// </summary>
         [Required]
         public List<Parceiro> Parceiro { get; set;} 

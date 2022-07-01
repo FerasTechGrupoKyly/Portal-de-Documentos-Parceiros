@@ -4,7 +4,7 @@ using PortalDocs.Models;
 namespace PortalDocs.Data
 {
     /// <summary>
-    /// Classe que herda de DbContext responsavel por configurar o Banco de Dados
+    /// Classe que herda de DbContext responsável por configurar o Banco de Dados
     /// </summary>
     public class AppDbContext : DbContext
     {
@@ -17,15 +17,15 @@ namespace PortalDocs.Data
         /// </summary>
         public DbSet<Parceiro> Parceiros { get; set; }
         /// <summary>
-        /// Tabela de DocumentoSolicitação do Banco de dados 
+        /// Tabela de Documento Solicitação do Banco de dados 
         /// </summary>
         public DbSet<DocumentoSolicitacao> DocumentoSolicitacoes { get; set; }
         /// <summary>
-        /// Tabela de DocumentoParceiro do Banco de dados 
+        /// Tabela de Documento Parceiro do Banco de dados 
         /// </summary>
         public DbSet<DocumentosParceiro> DocumentosParceiros { get; set; }
         /// <summary>
-        /// Tabela de Funcionarios do Banco de dados 
+        /// Tabela de Funcionários do Banco de dados 
         /// </summary>
         public DbSet<Funcionarios> Funcionarios { get; set; }
 

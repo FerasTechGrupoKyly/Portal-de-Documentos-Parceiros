@@ -21,7 +21,7 @@ namespace PortalDocs.Models
         /// </summary>
         public string Nome { get; set; }
         /// <summary>
-        /// string endereço Email do Parceiro
+        /// String endereço Email do Parceiro
         /// </summary>
         public string Email { get; set; }
         /// <summary>

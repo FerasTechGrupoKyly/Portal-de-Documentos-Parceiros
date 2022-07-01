@@ -19,7 +19,7 @@ namespace PortalDocs.Models
         [Required]
         public string CPF { get; set; }
         /// <summary>
-        /// string nome do Funcionário
+        /// String nome do Funcionário
         /// </summary>
         [Required]
         public string Nome { get; set; }

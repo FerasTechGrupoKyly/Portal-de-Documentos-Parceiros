@@ -1,7 +1,7 @@
 ﻿namespace PortalDocs.Models
 {
     /// <summary>
-    /// Classe para instaciar lista de Documentos
+    /// Classe para instaciar lista de documentos
     /// </summary>
     public class DocumentoSolicitacao
     {

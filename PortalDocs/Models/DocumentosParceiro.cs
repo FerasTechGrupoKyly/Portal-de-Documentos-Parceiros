@@ -14,7 +14,7 @@
         /// </summary>
         public string DocumentosEmpresa { get; set; }
         /// <summary>
-        /// Documentos necessarios dos Funcionarios
+        /// Documentos necessários dos Funcionarios
         /// </summary>
         public string DocumentosFuncionarios { get; set; }
     }

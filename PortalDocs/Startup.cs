@@ -30,7 +30,7 @@ namespace PortalDocs
 
         // This method gets called by the runtime. Use this method to add services to the container.
         /// <summary>
-        /// Serviços
+        /// Configuração de Serviços
         /// </summary>
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
